@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Waste2Wealth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Waste Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Sell Your Waste </h2>
+        <p>Join our platform to sell your biodegradable and non-biodegradable waste and contribute to a cleaner environment.</p>
+        <a href="#signup" class="button">Get Started</a>
+    </section>
+
+    <!-- Sign Up Section -->
+    <section id="signup">
+        <h2>Create an Account</h2>
+        <form action="signup.php" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required><br>
+
+            <input type="submit" value="Create Account">
+        </form>
+    </section>
+
+    <!-- Waste Categories Section -->
+    <section id="categories">
+        <h2>Choose Waste Category</h2>
+        <div class="category">
+            <h3>Biodegradable Waste</h3>
+            <p>Sell your kitchen scraps, yard waste, and other organic material that can decompose.</p>
+            <a href="biodegradable.html" class="button">Submit Biodegradable Waste</a>
+        </div>
+
+        <div class="category">
+            <h3>Non-Biodegradable Waste</h3>
+            <p>Dispose of plastics, metals, and other non-decomposable waste materials.</p>
+            <a href="nonbiodegradable.html" class="button">Submit Non-Biodegradable Waste</a>
+        </div>
+    </section>
+
+    <!-- Waste Impact Calculator Section -->
+    <section id="impact-calculator">
+        <h2>Waste Impact Calculator</h2>
+        <form id="calculator-form">
+            <label for="waste-type">Waste Type:</label>
+            <select id="waste-type" name="waste-type">
+                <option value="plastic">Plastic</option>
+                <option value="organic">Organic</option>
+                <option value="metal">Metal</option>
+            </select>
+
+            <label for="weight">Waste Weight (in kg):</label>
+            <input type="number" id="weight" name="weight" required><br>
+
+            <button type="button" onclick="calculateImpact()">Calculate Impact</button>
+        </form>
+
+        <p id="impact-result"></p>
+    </section>
+
+   
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Waste Management System(IWaste2Wealth). All Rights Reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        // Waste Impact Calculator
+        function calculateImpact() {
+            let wasteType = document.getElementById("waste-type").value;
+            let weight = document.getElementById("weight").value;
+            let result = "";
+
+            if (wasteType === "plastic") {
+                result = "You saved approximately " + (weight * 3.5) + " kg of CO2 from being emitted!";
+            } else if (wasteType === "organic") {
+                result = "Your waste can help generate compost for " + (weight * 2) + " square meters of farmland!";
+            } else if (wasteType === "metal") {
+                result = "You saved around " + (weight * 5) + " kg of raw materials!";
+            }
+
+            document.getElementById("impact-result").textContent = result;
+        }
+    </script>
+</body>
+</html>
