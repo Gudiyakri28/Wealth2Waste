@@ -1,1 +1,511 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;    
+    background-color: #f4f4f9; 
+    color: #333;
+    overflow-x: hidden;
+}
+/*HTML */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(135deg, #053407, #2f7e33);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo img {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+    animation: popAndRelax 2s infinite ease-in-out;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+nav ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    bottom: 0;
+    left: -100%;
+    transition: left 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    left: 0;
+}
+
+nav ul li a:hover {
+    color: #ffdf00;
+    transform: translateY(-5px);
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #ffdf00;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Home Section */
+/* Home Section Styling with Video */
+
+#home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /
+}
+
+/* Styling the Video Background */
+#home #background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the video */
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the full video fits without cutting */
+    z-index: -1; /* Sends the video to the background */
+    background-color: #ade8ab; /* Adds a background to fill empty spaces */
+}
+
+/* Content Styling */
+#home .content {
+    z-index: 1; /* Ensures the content appears above the video */
+    text-align: center;
+    color: #0d4b0a;
+}
+
+
+
+#home h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out forwards;
+}
+
+#home p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.button {
+    background-color: #4cca25;
+    color: #333;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.button:hover {
+    background-color: #cadd1e;
+}
+
+/* Sign-Up Section */
+#signup {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #80e0a7, #1eae91); /* Lighter green gradient */
+    text-align: center;
+    color: #fff;
+}
+
+#signup h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+} 
+#signup form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+#signup label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+#signup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#signup input[type="submit"] {
+    background-color: #2E7D32;
+    color: #fff;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+
+#signup input[type="submit"]:hover {
+    background-color: #4CAF50; /* Darker shade on hover */
+}
+
+#signup select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+/* Waste Categories Section */
+
+#categories {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #eee;
+}
+
+#categories h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.category {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 45%;
+    margin: 0 10px 30px 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category:hover {
+    transform: scale(1.05);
+}
+
+.category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.category p {
+    color: #666;
+}
+
+.category a {
+    text-decoration: none;
+    background-color: #4cca25;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.category a:hover {
+    background-color: #ffe94a;
+}
+
+.category b {
+    text-decoration: none;
+    background-color: #252aca;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.category b:hover {
+    background-color: #ffe94a;
+}
+
+
+/* Waste Impact Calculator Section */
+#impact-calculator {
+    padding: 50px;
+    background-color: #aeabab;
+    text-align: center;
+}
+
+#impact-calculator h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+#impact-calculator form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#impact-calculator label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+#impact-calculator input,
+#impact-calculator select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#impact-result {
+    
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #126aa4;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #80e0a7, #1eae91);
+    text-align: center;
+    border-top: 2px solid #ddd; /* Separator line */
+    color: #fff;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: Arial, 'Times New Roman', Times, serif, sans-serif;
+}
+
+#contact p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#contact label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+#contact input, 
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+#contact textarea {
+    resize: none;
+    height: 120px;
+}
+
+#contact button {
+    display: inline-block;
+    background-color: #4cca25;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #4cca25; /* Darker green */
+}
+
+#contact .map {
+    margin-top: 30px;
+}
+
+#contact .map iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Footer Section */
+footer {
+    background-color: #4CAF50; /* Dark green */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-top: 15px;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+footer ul li a:hover {
+    color: #ffdf00; /* Hover effect for links */
+}
+
+
+
+/* Keyframes */
+
+@keyframes popAndRelax {
+    0%, 100% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.1); /* Slightly larger */
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #categories .category {
+        width: 90%;
+        margin: 0 auto 30px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
 
